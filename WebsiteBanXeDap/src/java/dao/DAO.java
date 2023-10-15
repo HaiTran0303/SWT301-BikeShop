@@ -301,11 +301,10 @@ public class DAO extends DBContext {
     }
 
     public double totalMoneyDay(int day) {
-        String query = "select \r\n"
-                + "	SUM(tongGia) \r\n"
-                + "from Invoice\r\n"
-                + "where DATEPART(dw,[ngayXuat]) = ?\r\n"
-                + "Group by ngayXuat ";
+        String query = "SELECT SUM(tongGia)\n" +
+                   "FROM Invoice\n" +
+                   "WHERE DATEPART(dw, [ngayXuat]) = ?\n" +
+                   "GROUP BY ngayXuat";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1465,13 +1464,7 @@ public class DAO extends DBContext {
 
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
-            /*
-			 * ps.setString(1, name); ps.setString(2, image); ps.setString(3, price);
-			 * ps.setString(4, title); ps.setString(5, description); ps.setString(6,
-			 * category); ps.setInt(7, sid); ps.setString(8, model); ps.setString(9, color);
-			 * ps.setString(10, delivery); ps.setString(11, image2); ps.setString(12,
-			 * image3); ps.setString(13, image4);
-             */
+            
             ps.executeUpdate();
 
         } catch (Exception e) {

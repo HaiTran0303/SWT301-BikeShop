@@ -1,7 +1,11 @@
 package model;
 
 public class Email {
-	private String from, to, fromPassword, content, subject;
+	private String from;
+private String to;
+private String fromPassword;
+private String content;
+private String subject;
 
 	public String getFrom() {
 		return from;
