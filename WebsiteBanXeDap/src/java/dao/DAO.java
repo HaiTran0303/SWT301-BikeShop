@@ -52,6 +52,15 @@ public class DAO extends DBContext {
             }
         } catch (Exception e) {
         }
+        finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
+        }
         return list;
     }
 
