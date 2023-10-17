@@ -144,7 +144,7 @@ public class DAO extends DBContext {
 
     public List<Product> getAllProductOderByAsc() {
         List<Product> list = new ArrayList<>();
-        String query = "select * from Product\n"
+        String query = "Select * From Product\n"
                 + "order by price asc";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
@@ -171,7 +171,7 @@ public class DAO extends DBContext {
 
     public List<Product> getAllProductOderByDesc() {
         List<Product> list = new ArrayList<>();
-        String query = "select * from Product\n"
+        String query = "Select * from Product\n"
                 + "order by price desc";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
@@ -501,7 +501,7 @@ public class DAO extends DBContext {
 
     public List<Product> getProductByCID(String cid) {
         List<Product> list = new ArrayList<>();
-        String query = "select * from Product\n"
+        String query = "Select * from Product\n"
                 + "where cateID = ?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql

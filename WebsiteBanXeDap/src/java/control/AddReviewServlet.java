@@ -47,8 +47,7 @@ public class AddReviewServlet extends HttpServlet {
         DAO dao = new DAO();
         dao.insertReview(accountID, productID, contentReview);
       
-        Review newReview = new Review();
-        newReview = dao.getNewReview(accountID, productID);
+        Review newReview =  dao.getNewReview(accountID, productID);
         
         PrintWriter out = response.getWriter();
 
